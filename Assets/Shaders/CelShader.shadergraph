@@ -14,6 +14,12 @@
         },
         {
             "m_Id": "0d6e36b8adcc4347af16a951bf6621ea"
+        },
+        {
+            "m_Id": "55105624f9cd483cb664409bf9623f65"
+        },
+        {
+            "m_Id": "9426f50a64a14443a1f44240270597c8"
         }
     ],
     "m_Keywords": [],
@@ -274,8 +280,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": -430.3999938964844,
-            "y": -29.599971771240236
+            "x": -81.59999084472656,
+            "y": 23.99997901916504
         },
         "m_Blocks": [
             {
@@ -291,8 +297,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": -430.3999938964844,
-            "y": 170.40000915527345
+            "x": -81.59999084472656,
+            "y": 223.99996948242188
         },
         "m_Blocks": [
             {
@@ -680,6 +686,12 @@
         },
         {
             "m_Id": "0d6e36b8adcc4347af16a951bf6621ea"
+        },
+        {
+            "m_Id": "55105624f9cd483cb664409bf9623f65"
+        },
+        {
+            "m_Id": "9426f50a64a14443a1f44240270597c8"
         }
     ]
 }
@@ -1158,6 +1170,34 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "55105624f9cd483cb664409bf9623f65",
+    "m_Guid": {
+        "m_GuidSerialized": "2ffe178e-cfc4-4e31-a426-a51f874b82ae"
+    },
+    "m_Name": "Dots",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Dots",
+    "m_DefaultReferenceName": "_Dots",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 50.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlockNode",
     "m_ObjectId": "58fb195d0b3a42619899e3b28a897d2a",
@@ -1552,6 +1592,34 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "VertexDescription.Position"
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "9426f50a64a14443a1f44240270597c8",
+    "m_Guid": {
+        "m_GuidSerialized": "a65631e1-dc9a-40cd-9b77-fa9c966d9959"
+    },
+    "m_Name": "power",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "power",
+    "m_DefaultReferenceName": "_power",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 2.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
 }
 
 {
