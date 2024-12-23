@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class LoopManager : MonoBehaviour
 {
     [SerializeField] private List<SceneConfigsSO> sceneConfigs; 
-    private int loopLevel = 0;
     private string currentSceneName;
     
 
@@ -14,7 +13,7 @@ public class LoopManager : MonoBehaviour
         SceneConfigsSO nextScene;
         do
         {
-            nextScene = sceneConfigs[Random.Range(0, sceneConfigs.Count)];
+            nextScene = sceneConfigs[Random.Range(1, sceneConfigs.Count)];
         } while (nextScene.sceneName == currentSceneName);
         
         currentSceneName = nextScene.sceneName;
@@ -23,15 +22,15 @@ public class LoopManager : MonoBehaviour
 
     public void CorrectDecision()
     {
-        loopLevel++;
-        Debug.Log("Correct decision! Loop level: " + loopLevel);
+        GameManager.Instance.loopLevel++;
+        Debug.Log("Correct decision! Loop level: " + GameManager.Instance.loopLevel);
         LoadNextScene();
     }
 
     public void WrongDecision()
     {
-        loopLevel = 0;
-        Debug.Log("Wrong decision! Loop level reset to: " + loopLevel);
+        GameManager.Instance.loopLevel = 0;
+        Debug.Log("Wrong decision! Loop level reset to: " + GameManager.Instance.loopLevel);
         LoadNextScene();
     }
 }

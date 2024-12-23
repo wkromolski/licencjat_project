@@ -742,7 +742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432f613076be3634d840539a77610ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSecondDoor: 0
+  isSecondDoor: 1
   loopManager: {fileID: 1758837034}
 --- !u!65 &302172856
 BoxCollider:

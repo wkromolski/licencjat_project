@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1418838521210805410}
   - component: {fileID: 5476352301032551508}
+  - component: {fileID: 7963943010476189118}
   m_Layer: 0
   m_Name: LoopManager
   m_TagString: Untagged
@@ -50,3 +51,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2c75bf18533064646a1240f58d067887, type: 2}
   - {fileID: 11400000, guid: d0b1c59c927ceec49ad9f50adfd24d56, type: 2}
   - {fileID: 11400000, guid: f70b162e7727e51419e61741a565dc5e, type: 2}
+--- !u!114 &7963943010476189118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461929485839210435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0927d10bd71b8e43a4fccbab349e009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopLevel: 0
