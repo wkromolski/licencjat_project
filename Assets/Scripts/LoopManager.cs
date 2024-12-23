@@ -4,9 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LoopManager : MonoBehaviour
 {
-    [SerializeField] private List<SceneConfigsSO> sceneConfigs; 
+    [SerializeField] private List<SceneConfigsSO> sceneConfigs;
+    [SerializeField] private LoopData loopData;  
     private string currentSceneName;
-    
+
+    private void Start()
+    {
+        if (loopData == null)
+        {
+            loopData = Resources.Load<LoopData>("LoopData"); 
+        }
+    }
 
     public void LoadNextScene()
     {
@@ -15,22 +23,22 @@ public class LoopManager : MonoBehaviour
         {
             nextScene = sceneConfigs[Random.Range(1, sceneConfigs.Count)];
         } while (nextScene.sceneName == currentSceneName);
-        
+
         currentSceneName = nextScene.sceneName;
         SceneManager.LoadScene(currentSceneName);
     }
 
     public void CorrectDecision()
     {
-        GameManager.Instance.loopLevel++;
-        Debug.Log("Correct decision! Loop level: " + GameManager.Instance.loopLevel);
+        loopData.loopLevel++;  
+        Debug.Log("Correct decision! Loop level: " + loopData.loopLevel);
         LoadNextScene();
     }
 
     public void WrongDecision()
     {
-        GameManager.Instance.loopLevel = 0;
-        Debug.Log("Wrong decision! Loop level reset to: " + GameManager.Instance.loopLevel);
+        loopData.loopLevel = 0; 
+        Debug.Log("Wrong decision! Loop level reset to: " + loopData.loopLevel);
         LoadNextScene();
     }
 }
