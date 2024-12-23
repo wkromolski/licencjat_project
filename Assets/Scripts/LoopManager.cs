@@ -21,11 +21,10 @@ public class LoopManager : MonoBehaviour
         SceneConfigsSO nextScene;
         do
         {
-            nextScene = sceneConfigs[Random.Range(1, sceneConfigs.Count)];
-        } while (nextScene.sceneName == currentSceneName);
+            nextScene = sceneConfigs[Random.Range(0, sceneConfigs.Count)];
+        } while (nextScene.sceneName == SceneManager.GetActiveScene().name);
 
-        currentSceneName = nextScene.sceneName;
-        SceneManager.LoadScene(currentSceneName);
+        SceneManager.LoadScene(nextScene.sceneName);
     }
 
     public void CorrectDecision()
@@ -39,6 +38,6 @@ public class LoopManager : MonoBehaviour
     {
         loopData.loopLevel = 0; 
         Debug.Log("Wrong decision! Loop level reset to: " + loopData.loopLevel);
-        LoadNextScene();
+        SceneManager.LoadScene(0);
     }
 }
