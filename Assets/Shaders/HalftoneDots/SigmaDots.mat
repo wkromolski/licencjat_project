@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Outline
-  m_Shader: {fileID: -6465566751694194690, guid: e2781764db13c4545b5e8fc8fb71a541,
+  m_Name: SigmaDots
+  m_Shader: {fileID: -6465566751694194690, guid: cc194cd8c5726c949a541cdbe505daa3,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,6 +24,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Base_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -38,14 +42,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Fade_Distance: 33.88
-    - _Outline_Thickness: 0.0052
+    - _CircleDensity: 6
+    - _FalloffThreshold: 2.5
+    - _Lit_Threshold: 2.02
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Rotation: 0.61
+    - _ShadingMultiplier: 0
+    - _Softness: -0
+    - _USE_SCREEN_SPACE: 0
     m_Colors:
-    - _Outline_Color: {r: 0.8773585, g: 0.30890557, b: 0.27727836, a: 0}
+    - _BaseColor: {r: 0.87843144, g: 0.27058825, b: 0.27450982, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &1829218880060010285
+--- !u!114 &5850098716813278508
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
