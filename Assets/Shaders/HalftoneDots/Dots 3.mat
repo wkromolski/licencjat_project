@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dots 1
+  m_Name: Dots 3
   m_Shader: {fileID: -6465566751694194690, guid: cc194cd8c5726c949a541cdbe505daa3,
     type: 3}
   m_Parent: {fileID: 0}
@@ -48,12 +48,12 @@ Material:
     - _AlphaToMask: 1
     - _Blend: 0
     - _CastShadows: 1
-    - _CircleDensity: 34.35
+    - _CircleDensity: 6.36
     - _Cull: 2
     - _DstBlend: 0
     - _FalloffThreshold: 2.86
     - _Lit_Threshold: 2
-    - _MaxDistanceOfSee: 5
+    - _MaxDistanceOfSee: 4
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Rotation: 0.5
