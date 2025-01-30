@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] footstepSounds;
     [SerializeField] private AudioSource audioSource;
     private int lastPlayedIndex = -1; 
-
+    
     public void PlayFootstep()
     {
         if (footstepSounds.Length == 0 || audioSource == null)
@@ -24,4 +24,5 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = footstepSounds[randomIndex];
         audioSource.Play();
     }
+
 }
