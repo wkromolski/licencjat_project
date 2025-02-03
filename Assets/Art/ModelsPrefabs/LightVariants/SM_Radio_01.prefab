@@ -93,7 +93,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4380473737768457003}
-  - component: {fileID: 8473278484970638804}
   m_Layer: 0
   m_Name: SM_Radio_01
   m_TagString: Untagged
@@ -119,27 +118,6 @@ Transform:
   - {fileID: 193216963350001678}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8473278484970638804
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4789376805294401758}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4823945180917099255
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +213,7 @@ GameObject:
   - component: {fileID: 193216963350001678}
   - component: {fileID: 7318495305177932010}
   - component: {fileID: 733970541209407762}
+  - component: {fileID: 1862558892336284423}
   m_Layer: 0
   m_Name: Radio
   m_TagString: Untagged
@@ -308,3 +287,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1862558892336284423
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8867008168722786468}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.30002248, y: 0.44698194, z: 0.11058893}
+  m_Center: {x: 0.000000007450581, y: 0.22349097, z: 0.00000002235174}

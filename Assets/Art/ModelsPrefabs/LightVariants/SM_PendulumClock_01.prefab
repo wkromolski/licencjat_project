@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8899973487380017173}
   - component: {fileID: 1034964739005990855}
   - component: {fileID: 3752885363880385877}
+  - component: {fileID: 6775676896516463019}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -84,6 +85,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6775676896516463019
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3361437339714206802}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.74088174, y: 2.224628, z: 0.43529534}
+  m_Center: {x: 0.0000002682209, y: 1.112314, z: -0.000000022351742}
 --- !u!1 &3799966630927711753
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +199,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7980283072769078824}
-  - component: {fileID: 9021316719916611113}
   m_Layer: 0
   m_Name: SM_PendulumClock_01
   m_TagString: Untagged
@@ -207,27 +228,6 @@ Transform:
   - {fileID: 8398739028962246589}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!65 &9021316719916611113
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4037799292880096995}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4402288712126191065
 GameObject:
   m_ObjectHideFlags: 0
