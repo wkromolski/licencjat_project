@@ -29,15 +29,27 @@ public class BookshelfAnomaly : MonoBehaviour
     {
         foreach (Transform book in books)
         {
-            Vector3 randomDirection = new Vector3(
-                Random.Range(-1f, 1f), 
-                Random.Range(0.5f, 0.5f), 
-                Random.Range(-1f, 1f) 
-            ).normalized * launchDistance;
-
-            book.DOJump(book.position + randomDirection, jumpPower, jumpCount, launchTime)
+            Rigidbody rb = book.GetComponent<Rigidbody>();
+            if (rb == null)
+            {
+                rb = book.gameObject.AddComponent<Rigidbody>();
+            }
+            
+            rb.isKinematic = true;
+            rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+            
+            Vector3 launchDirection = new Vector3(0f, 0.1f, Random.Range(-0.6f, -0.2f)).normalized * launchDistance;
+            
+            var jumpTween = book.DOJump(book.position + launchDirection, jumpPower, jumpCount, launchTime)
                 .SetEase(Ease.OutQuad);
-
+    
+            jumpTween.OnUpdate(() => {
+                if (jumpTween.ElapsedPercentage() >= 0.2f && rb.isKinematic)
+                {
+                    rb.isKinematic = false;
+                }
+            });
+            
             book.DORotate(new Vector3(
                 Random.Range(-rotationAmount, rotationAmount),
                 Random.Range(-rotationAmount, rotationAmount),

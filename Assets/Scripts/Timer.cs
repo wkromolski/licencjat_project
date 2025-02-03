@@ -1,49 +1,58 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.SceneManagement;
+using DG.Tweening;
 
-public class Timer : MonoBehaviour
+public class ClockTimer : MonoBehaviour
 {
     [Header("Timer Settings")]
-    public float timeRemaining = 120f; 
-    [SerializeField] private TextMeshProUGUI TimeText;
-    [SerializeField] private float timeIntervalOn = 1f;
-    [SerializeField] private float timeIntervalOff = 0.5f;
-    [SerializeField] private float timeSubtractOn = 1f;
-    [SerializeField] private float timeSubtractOff = 1f;
+    public float timeRemaining = 120f;
+    
+    [Header("Clock Hands")]
+    [SerializeField] private Transform secondHand;
+    [SerializeField] private Transform minuteHand; 
+
+    [Header("Second Tick Settings")]
+    [SerializeField] private float tickDuration = 0.2f;  
+    [SerializeField] private float brightTickInterval = 1f; 
+    [SerializeField] private float darkTickInterval = 0.5f;
+    
+    private const float secondTickAngle = -6f; 
+    private const float minuteTickAngle = -6f;
 
     private void Start()
     {
-        StartCoroutine(TimeLeft());
+        StartCoroutine(TickTimer());
     }
 
-    IEnumerator TimeLeft()
+    private void Update()
     {
+        Debug.Log("time remaining: " + timeRemaining + " seconds");
+    }
+
+    private IEnumerator TickTimer()
+    {
+        int secondsElapsed = 0;
         while (timeRemaining > 0)
         {
-            DisplayTime();
-            
+            Vector3 newSecondRotation = secondHand.eulerAngles + new Vector3(0f, 0f, -secondTickAngle);
+            secondHand.DORotate(newSecondRotation, tickDuration).SetEase(Ease.OutQuad);
+
             bool lampOn = LanternController.IsLanternOn;
-            
-            float waitTime = lampOn ? timeIntervalOn : timeIntervalOff;
-            yield return new WaitForSeconds(waitTime);
-            
-            float subValue = lampOn ? timeSubtractOn : timeSubtractOff;
-            timeRemaining -= subValue;
+            float tickInterval = lampOn ? brightTickInterval : darkTickInterval;
+
+            yield return new WaitForSeconds(tickInterval);
+
+            timeRemaining -= 1f;
+            secondsElapsed++;
+
+            if (secondsElapsed % 60 == 0)
+            {
+                Vector3 newMinuteRotation = minuteHand.eulerAngles + new Vector3(0f, 0f, -minuteTickAngle);
+                minuteHand.DORotate(newMinuteRotation, tickDuration).SetEase(Ease.OutQuad);
+            }
         }
         
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
-    }
-
-    void DisplayTime()
-    {
-        float minutes = Mathf.FloorToInt(timeRemaining / 60);
-        float seconds = Mathf.FloorToInt(timeRemaining % 60);
-        TimeText.text = "Time: " + string.Format("{0:00}:{1:00}", minutes, seconds);
+        Debug.Log("Clock Timer finished");
     }
 }
