@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LoopData", menuName = "Game/LoopData", order = 1)]
 public class LoopData : ScriptableObject
 {
-    public int loopLevel = 0;  
+    public int loopValue = 1;
 }

@@ -4,43 +4,42 @@ using UnityEngine;
 
 public class DoorsController : MonoBehaviour
 {
-    [SerializeField] private bool isSecondDoor; 
-    [SerializeField] private LoopManager loopManager;
+    public string doorType;
+
     private bool playerInRange = false;
+    private LoopManager loopManager;
+    [SerializeField] private GameObject pressEUI;
 
-    private void OnTriggerEnter(Collider other)
+    void Start()
     {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player entered door trigger: " + gameObject.name);
-            playerInRange = true;
-        }
+        loopManager = FindObjectOfType<LoopManager>();
+        
+        if (pressEUI != null)
+            pressEUI.SetActive(false);
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player exited door trigger: " + gameObject.name);
-            playerInRange = false;
-        }
-    }
-
-    private void Update()
+    void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Player pressed E near door: " + gameObject.name);
-            if (isSecondDoor && loopManager != null)
-            {
-                Debug.Log("Correct door chosen.");
-                loopManager.CorrectDecision();
-            }
-            else if (!isSecondDoor && loopManager != null)
-            {
-                Debug.Log("Wrong door chosen.");
-                loopManager.WrongDecision();
-            }
+            loopManager.ProcessDoorChoice(doorType);
         }
+    }
+    
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            playerInRange = true;
+        if (pressEUI != null)
+            pressEUI.SetActive(true);
+    }
+    
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            playerInRange = false;
+        playerInRange = true;
+        if (pressEUI != null)
+            pressEUI.SetActive(false);
     }
 }

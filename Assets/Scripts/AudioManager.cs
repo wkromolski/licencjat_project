@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource loriSource;
     
     
+    
     [Header("Footstep Sounds")]
     [SerializeField] AudioClip[] stepSounds;
     private int lastPlayedStepIndex = -1;
@@ -36,6 +37,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip loriSound;
     [SerializeField] [Range(0f, 1f)] private float loriSoundVolume = 0.5f;
     
+    
     private void Awake()
     {
         if (Instance == null)
@@ -48,6 +50,8 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+   
+    
     public void PlayFootstep()
     {
         if (stepSounds.Length == 0 || footstepSource == null)
@@ -76,7 +80,7 @@ public class AudioManager : MonoBehaviour
         } while (randomIndex == lastPlayedTickIndex);
 
         lastPlayedTickIndex = randomIndex;
-        
+
         AudioSource.PlayClipAtPoint(ticksSounds[randomIndex], transform.position, 1f);
     }
 
@@ -95,7 +99,7 @@ public class AudioManager : MonoBehaviour
             breathSource.PlayOneShot(breathSound, breathSoundVolume);
         }
     }
-    
+
     public void PlayNails()
     {
         if (creepySounds.Length == 0 || nailsSource == null)
@@ -111,39 +115,39 @@ public class AudioManager : MonoBehaviour
         nailsSource.clip = creepySounds[randomIndex];
         nailsSource.Play();
     }
-    
+
     private IEnumerator BreathSoundCoroutine()
     {
         while (true)
         {
-            float randomDelay = Random.Range(5f, 30f);
+            float randomDelay = Random.Range(10f, 35f);
             yield return new WaitForSeconds(randomDelay);
-            
+
             if (!LanternController.IsLanternOn)
             {
                 PlayBreathSound();
             }
-            
-            yield return new WaitForSeconds(120f - randomDelay);
+
+            yield return new WaitForSeconds(10f - randomDelay);
         }
     }
-    
+
     private IEnumerator NailsSoundCoroutine()
     {
         while (true)
         {
-            float randomDelay = Random.Range(15f, 50f);
+            float randomDelay = Random.Range(5f, 20f);
             yield return new WaitForSeconds(randomDelay);
-            
+
             if (!LanternController.IsLanternOn)
             {
                 PlayNails();
             }
-            
-            yield return new WaitForSeconds(120f - randomDelay);
+
+            yield return new WaitForSeconds(20f - randomDelay);
         }
     }
-    
+
     private void Start()
     {
         StartCoroutine(BreathSoundCoroutine());
