@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class TimeController : MonoBehaviour
@@ -44,24 +43,30 @@ public class TimeController : MonoBehaviour
             Vector3 newSecondRotation = secondHand.eulerAngles + new Vector3(0f, 0f, -secondTickAngle);
             secondHand.DORotate(newSecondRotation, tickDuration).SetEase(Ease.OutQuad);
             
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayTickSpatial();
+            }
+            
             if (ticksElapsed > 0 && ticksElapsed % 60 == 0)
             {
                 Vector3 newMinuteRotation = minuteHand.eulerAngles + new Vector3(0f, 0f, -minuteTickAngle);
                 minuteHand.DORotate(newMinuteRotation, tickDuration).SetEase(Ease.OutQuad);
             }
-
             bool lampOn = LanternController.IsLanternOn;
             float tickInterval = lampOn ? brightTickInterval : darkTickInterval;
 
             yield return new WaitForSeconds(tickInterval);
-            
+
             currentTime += 1f;
             ticksElapsed++;
-            
+
             UpdateClockUIText();
         }
+        
         LoadingScreenManager.Instance.LoadSceneWithTransition("Level");
     }
+
 
     private void UpdateClockUIText()
     {
