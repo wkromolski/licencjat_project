@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SigmaDots
+  m_Name: Dots 6
   m_Shader: {fileID: -6465566751694194690, guid: cc194cd8c5726c949a541cdbe505daa3,
     type: 3}
   m_Parent: {fileID: 0}
@@ -48,17 +48,17 @@ Material:
     - _AlphaToMask: 1
     - _Blend: 0
     - _CastShadows: 1
-    - _CircleDensity: 1.9
+    - _CircleDensity: 6.36
     - _Cull: 2
     - _DstBlend: 0
-    - _FalloffThreshold: 2.04
-    - _Lit_Threshold: 2.02
-    - _MaxDistanceOfSee: 5
+    - _FalloffThreshold: 2.86
+    - _Lit_Threshold: 2
+    - _MaxDistanceOfSee: 4
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Rotation: 0.61
+    - _Rotation: 0.5
     - _ShadingMultiplier: 0
-    - _Softness: -0
+    - _Softness: 0
     - _SrcBlend: 1
     - _Surface: 0
     - _USE_SCREEN_SPACE: 0
@@ -66,7 +66,7 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.85882354, b: 0.25882354, a: 1}
+    - _BaseColor: {r: 0.6132076, g: 0.18801177, b: 0.19125758, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5850098716813278508
 MonoBehaviour:

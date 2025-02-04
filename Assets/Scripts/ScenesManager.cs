@@ -8,6 +8,6 @@ public class ScenesManager : MonoBehaviour
 {
     public void LoadLevel()
     {
-        SceneManager.LoadScene("Level"); 
+        LoadingScreenManager.Instance.LoadSceneWithTransition("Level");
     }
 }

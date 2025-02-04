@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class TimeController : MonoBehaviour
@@ -59,7 +60,7 @@ public class TimeController : MonoBehaviour
             
             UpdateClockUIText();
         }
-        Debug.Log("Clock Timer finished");
+        LoadingScreenManager.Instance.LoadSceneWithTransition("Level");
     }
 
     private void UpdateClockUIText()

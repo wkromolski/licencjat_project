@@ -38,7 +38,7 @@ public class BookshelfAnomaly : MonoBehaviour
             rb.isKinematic = true;
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
             
-            Vector3 launchDirection = new Vector3(0f, 0.1f, Random.Range(-0.6f, -0.2f)).normalized * launchDistance;
+            Vector3 launchDirection = new Vector3(Random.Range(0.2f, 0.6f), 0.1f, 0).normalized * launchDistance;
             
             var jumpTween = book.DOJump(book.position + launchDirection, jumpPower, jumpCount, launchTime)
                 .SetEase(Ease.OutQuad);
