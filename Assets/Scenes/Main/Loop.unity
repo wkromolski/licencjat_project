@@ -4422,6 +4422,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoopText
       objectReference: {fileID: 0}
+    - target: {fileID: 926532295511632241, guid: 7444fd1fe3a4fbe43afe0dea3bf19eac,
+        type: 3}
+      propertyPath: m_text
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2229775252642662455, guid: 7444fd1fe3a4fbe43afe0dea3bf19eac,
         type: 3}
       propertyPath: m_Name
