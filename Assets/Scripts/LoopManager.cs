@@ -19,7 +19,7 @@ public class LoopManager : MonoBehaviour
         if (loopText3D != null)
             loopText3D.text = loopData.loopValue.ToString();
         
-        if (anomalyObjects.Count > 0 && Random.value <= 0.7f)
+        if (anomalyObjects.Count > 0 && Random.value <= 0.5f)
         {
             List<int> possibleIndices = new List<int>();
             for (int i = 0; i < anomalyObjects.Count; i++)
@@ -109,8 +109,6 @@ public class LoopManager : MonoBehaviour
         }
         
         Time.timeScale = 0f;
-        AudioListener.pause = true;
-        
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

@@ -10,4 +10,9 @@ public class ScenesManager : MonoBehaviour
     {
         LoadingScreenManager.Instance.LoadSceneWithTransition("Level");
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

@@ -1308,11 +1308,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1596020143290726793, guid: e3a008897c76028429e28c8fa13c0454,
-        type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
     - target: {fileID: 3739836812264220977, guid: e3a008897c76028429e28c8fa13c0454,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5022,6 +5017,11 @@ PrefabInstance:
       propertyPath: footstepSource
       value: 
       objectReference: {fileID: 524218660}
+    - target: {fileID: 7383662607070182150, guid: b29d391b59db3ce4b9fa3bc1f246727c,
+        type: 3}
+      propertyPath: loriSoundVolume
+      value: 0.415
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
