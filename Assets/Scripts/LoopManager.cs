@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LoopManager : MonoBehaviour
 {
@@ -11,6 +11,8 @@ public class LoopManager : MonoBehaviour
     public List<GameObject> anomalyObjects;
     
     private static int lastAnomalyIndex = -1;
+    
+    [SerializeField] private GameObject finalUIPanel;
 
     void Start()
     {
@@ -42,10 +44,8 @@ public class LoopManager : MonoBehaviour
     /// <param name="doorType">Typ drzwi: "Beginning" lub "End"</param>
     public void ProcessDoorChoice(string doorType)
     {
-        // Sprawdzamy, czy jakiekolwiek obiekty z tagiem "Anomalies" są aktywne
         bool anomalyActive = false;
 
-        // Sprawdzamy wszystkie obiekty na scenie, mające tag "Anomalies"
         GameObject[] anomalyObjectsInScene = GameObject.FindGameObjectsWithTag("Anomalies");
     
         foreach (GameObject anomaly in anomalyObjectsInScene)
@@ -57,17 +57,14 @@ public class LoopManager : MonoBehaviour
             }
         }
 
-        // Sprawdzamy wybór drzwi i aktualizujemy loopa
         if (doorType == "End")
         {
             if (anomalyActive)
             {
-                // Jeśli anomalia jest aktywna, zwiększamy loop o 1
                 loopData.loopValue += 1;
             }
             else
             {
-                // Jeśli brak anomalii, resetujemy loop
                 loopData.loopValue = 0;
             }
         }
@@ -75,25 +72,61 @@ public class LoopManager : MonoBehaviour
         {
             if (anomalyActive)
             {
-                // Jeśli anomalia jest aktywna, resetujemy loop
                 loopData.loopValue = 0;
             }
             else
             {
-                // Jeśli brak anomalii, zwiększamy loop o 1
                 loopData.loopValue += 1;
             }
         }
-        else
-        {
-            Debug.LogWarning("Nieznany typ drzwi: " + doorType);
-        }
-
-        // Aktualizacja wyświetlanego tekstu (opcjonalnie)
+        
         if (loopText3D != null)
             loopText3D.text = loopData.loopValue.ToString();
-    
-        // Przeładowanie sceny z animacją przejścia
-        LoadingScreenManager.Instance.LoadSceneWithTransition("Loop");
+        
+        if (loopData.loopValue >= 6)
+        {
+            ShowFinalUI();
+        }
+        else
+        {
+            // Przeładowanie sceny, jeśli jeszcze nie osiągnięto wygranej
+            LoadingScreenManager.Instance.LoadSceneWithTransition("Loop");
+        }
     }
+
+    /// <summary>
+    /// Metoda aktywująca finalne UI (np. ekran wygranej) i pauzująca rozgrywkę.
+    /// </summary>
+    private void ShowFinalUI()
+    {
+        if (finalUIPanel != null)
+        {
+            finalUIPanel.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("FinalUIPanel nie został przypisany w Inspectorze!");
+        }
+        
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
+        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    
+    public void ReturnToMenu()
+    {
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+        if (LoadingScreenManager.Instance != null)
+        {
+            LoadingScreenManager.Instance.LoadSceneWithTransition("Menu");
+        }
+        else
+        {
+            SceneManager.LoadScene("Menu");
+        }
+    }
+    
 }
