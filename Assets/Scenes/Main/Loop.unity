@@ -2069,6 +2069,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1092535193935204453, guid: 352284657bc73ee4ead0691f950fc757,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4477572
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092535193935204453, guid: 352284657bc73ee4ead0691f950fc757,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.4477572
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092535193935204453, guid: 352284657bc73ee4ead0691f950fc757,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8113208
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244164170254616241, guid: 352284657bc73ee4ead0691f950fc757,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244164170254616241, guid: 352284657bc73ee4ead0691f950fc757,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244164170254616241, guid: 352284657bc73ee4ead0691f950fc757,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.38039216
+      objectReference: {fileID: 0}
     - target: {fileID: 1756189900726644713, guid: 352284657bc73ee4ead0691f950fc757,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2278,6 +2308,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059997007130506550, guid: 352284657bc73ee4ead0691f950fc757,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1369894131}
+    - target: {fileID: 9059997007130506550, guid: 352284657bc73ee4ead0691f950fc757,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AdjustSpeed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2956,6 +2996,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 564072764}
+--- !u!114 &1369894131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5146240389647321455, guid: a9fc1f2a21695eb4ebd99144bc01d95a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4159053247477768098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369894127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebd24a3d0d78cc45b61a059e778c236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1378769303 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3267772789673853694, guid: 3c37e5ab13348d8429cc7a6c648189a2,
