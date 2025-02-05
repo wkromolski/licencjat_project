@@ -19,7 +19,7 @@ public class LoopManager : MonoBehaviour
         if (loopText3D != null)
             loopText3D.text = loopData.loopValue.ToString();
         
-        if (anomalyObjects.Count > 0 && Random.value <= 0.5f)
+        if (anomalyObjects.Count > 0 && Random.value <= 0.6f)
         {
             List<int> possibleIndices = new List<int>();
             for (int i = 0; i < anomalyObjects.Count; i++)
