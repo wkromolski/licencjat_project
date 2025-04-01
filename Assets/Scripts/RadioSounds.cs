@@ -24,9 +24,11 @@ public class RadioSounds : MonoBehaviour
     {
         if (other.CompareTag("Player") && !isSequencePlaying)
         {
+            Debug.Log("Trigger uruchomiony: " + gameObject.name);
             StartCoroutine(PlayRadioSequence());
         }
     }
+    
 
     private IEnumerator PlayRadioSequence()
     {
