@@ -35,13 +35,7 @@ public class LoopManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Metoda wywoływana przez skrypty drzwi, która aktualizuje wartość loopa w zależności od:
-    /// - wybranych drzwi (parametr doorType – "Beginning" lub "End")
-    /// - aktywności anomalii
-    /// Po zmianie, metoda przeładowuje scenę przy użyciu LoadSceneWithTransition.
-    /// </summary>
-    /// <param name="doorType">Typ drzwi: "Beginning" lub "End"</param>
+
     public void ProcessDoorChoice(string doorType)
     {
         bool anomalyActive = false;
@@ -89,23 +83,15 @@ public class LoopManager : MonoBehaviour
         }
         else
         {
-            // Przeładowanie sceny, jeśli jeszcze nie osiągnięto wygranej
             LoadingScreenManager.Instance.LoadSceneWithTransition("Loop");
         }
     }
-
-    /// <summary>
-    /// Metoda aktywująca finalne UI (np. ekran wygranej) i pauzująca rozgrywkę.
-    /// </summary>
+    
     private void ShowFinalUI()
     {
         if (finalUIPanel != null)
         {
             finalUIPanel.SetActive(true);
-        }
-        else
-        {
-            Debug.LogWarning("FinalUIPanel nie został przypisany w Inspectorze!");
         }
         
         Time.timeScale = 0f;
