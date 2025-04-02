@@ -1812,9 +1812,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 1884126013, guid: 1e8a5d88e2eccb4489ec10eaa83ff1ef,
+    m_HighlightedSprite: {fileID: 296602952, guid: 1e8a5d88e2eccb4489ec10eaa83ff1ef,
       type: 3}
-    m_PressedSprite: {fileID: 1743662011, guid: 1e8a5d88e2eccb4489ec10eaa83ff1ef,
+    m_PressedSprite: {fileID: -1815979722, guid: 1e8a5d88e2eccb4489ec10eaa83ff1ef,
       type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -2062,9 +2062,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 1884126013, guid: 1e8a5d88e2eccb4489ec10eaa83ff1ef,
+    m_HighlightedSprite: {fileID: 296602952, guid: 1e8a5d88e2eccb4489ec10eaa83ff1ef,
       type: 3}
-    m_PressedSprite: {fileID: 1743662011, guid: 1e8a5d88e2eccb4489ec10eaa83ff1ef,
+    m_PressedSprite: {fileID: -1815979722, guid: 1e8a5d88e2eccb4489ec10eaa83ff1ef,
       type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -2500,7 +2500,7 @@ PrefabInstance:
     - target: {fileID: 8187575915390983872, guid: f8b46fbc7f70eaa47baf69a4294d7968,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
