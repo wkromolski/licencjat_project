@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c624d565acb1b4981ae584615783c9, type: 3}
   m_Name: LoopData
   m_EditorClassIdentifier: 
-  loopLevel: 0
+  loopValue: 1
