@@ -54,7 +54,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: 0.66
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 8551674840678377457}
   - component: {fileID: 5146240389647321455}
   - component: {fileID: 1112144058890627305}
+  - component: {fileID: 1182301344838626098}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -286,7 +287,7 @@ Transform:
   m_GameObject: {fileID: 6763118455271592235}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.015, z: 0.102}
+  m_LocalPosition: {x: 0, y: 0.304, z: 0.102}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -423,6 +424,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 0}
+--- !u!114 &1182301344838626098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6763118455271592235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fec7c13d16ac0489213751b117f7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pausePanel: {fileID: 0}
 --- !u!1 &7490547680628866212
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +548,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ee16b14c01cf97840bcd82864689a1aa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.518
+      value: -0.199
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee16b14c01cf97840bcd82864689a1aa,
         type: 3}

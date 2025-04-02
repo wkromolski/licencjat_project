@@ -1786,6 +1786,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1307664849039039969}
     m_Modifications:
+    - target: {fileID: 1575472495357111472, guid: d7acb9529faaeff4580c1cf49ffb0ad8,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3981425613297166964, guid: d7acb9529faaeff4580c1cf49ffb0ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2023,6 +2028,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1307664849039039969}
     m_Modifications:
+    - target: {fileID: 2107646848456241815, guid: b9cee2184f634c84dbbf165ae5383059,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4711980827956094416, guid: b9cee2184f634c84dbbf165ae5383059,
         type: 3}
       propertyPath: m_Name
@@ -2248,7 +2258,7 @@ PrefabInstance:
     - target: {fileID: 3729016818650035588, guid: f67d238c93c7f6441996610c1524fece,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.9880516
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3729016818650035588, guid: f67d238c93c7f6441996610c1524fece,
         type: 3}
@@ -2562,6 +2572,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Chair_01
       objectReference: {fileID: 0}
+    - target: {fileID: 5175678694281342188, guid: 06c66ce9334615540a30e9fed672cbcf,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2630,6 +2645,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6176239978692945996, guid: 0d35d53247c5e524aa632764beb6eb79,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6953477087097509581, guid: 0d35d53247c5e524aa632764beb6eb79,
         type: 3}
@@ -2714,6 +2734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Armchair_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6885055813713009956, guid: 1b70cb1c567d82b43a8981e1206acbde,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3332,6 +3357,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1307664849039039969}
     m_Modifications:
+    - target: {fileID: 4141239995913994289, guid: 4734966f7f2b66943872fe91b601929a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7449649439073834028, guid: 4734966f7f2b66943872fe91b601929a,
         type: 3}
       propertyPath: m_LocalPosition.x
