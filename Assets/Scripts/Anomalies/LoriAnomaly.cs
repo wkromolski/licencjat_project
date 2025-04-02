@@ -1,48 +1,67 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System.Collections;
 
 public class LoriAnomaly : MonoBehaviour
 {
-    [SerializeField] private Transform lori;
-    [SerializeField] private Vector3 targetLocalOffset = new Vector3(0f, 0f, 10f);
-    [SerializeField] private float moveDuration = 5f;
-    [SerializeField] private Ease moveEase = Ease.Linear;
+    [Header("OIIA LORI")]
+    [SerializeField] private Transform animatedObject;
 
-    private Tween loriTween;
-    private bool activated = false;
-    private Vector3 initialLocalPosition;
+    [Header("Float")]
+    [SerializeField] private float floatDistance = 0.1f;
+    [SerializeField] private float floatDuration = 1.5f;
 
-    private void Start()
+    [Header("Spin")]
+    [SerializeField] private float minSpinSpeed = 20f;
+    [SerializeField] private float maxSpinSpeed = 90f;
+    [SerializeField] private float spinChangeInterval = 3f;
+
+    private Tween floatTween;
+    private Tween spinTween;
+    private Coroutine spinRoutine;
+
+    private void OnEnable()
     {
-        initialLocalPosition = lori.localPosition;
-        lori.gameObject.SetActive(false);
+        if (animatedObject == null) return;
+
+        StartFloating();
+        spinRoutine = StartCoroutine(SpinRoutine());
     }
 
-    public void ActivateLori()
+    private void OnDisable()
     {
-        if (lori == null) return;
-        if (!activated)
-        {
-            activated = true;
-            lori.gameObject.SetActive(true);
-            loriTween = lori.DOLocalMove(initialLocalPosition + targetLocalOffset, moveDuration)
-                .SetLoops(-1, LoopType.Yoyo)
-                .SetEase(moveEase);
-            
-            if(AudioManager.Instance != null)
-            {
-                AudioManager.Instance.PlayLoriSound();
-            }
-        }
+        floatTween?.Kill();
+        spinTween?.Kill();
+        if (spinRoutine != null) StopCoroutine(spinRoutine);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void StartFloating()
     {
-        if (other.CompareTag("Player"))
+        Vector3 startPos = animatedObject.localPosition;
+        Vector3 upPos = startPos + new Vector3(0f, floatDistance, 0f);
+
+        floatTween = animatedObject.DOLocalMoveY(upPos.y, floatDuration)
+            .SetLoops(-1, LoopType.Yoyo)
+            .SetEase(Ease.InOutSine);
+    }
+
+    private IEnumerator SpinRoutine()
+    {
+        while (true)
         {
-            ActivateLori();
+            float randomSpeed = Random.Range(minSpinSpeed, maxSpinSpeed);
+            int direction = Random.value < 0.5f ? 1 : -1;
+
+            float rotationPerSecond = randomSpeed * direction;
+            float duration = spinChangeInterval;
+
+            spinTween = animatedObject.DOLocalRotate(
+                animatedObject.localEulerAngles + new Vector3(0f, rotationPerSecond * duration, 0f),
+                duration,
+                RotateMode.FastBeyond360
+            ).SetEase(Ease.Linear);
+
+            yield return new WaitForSeconds(spinChangeInterval);
         }
     }
 }
