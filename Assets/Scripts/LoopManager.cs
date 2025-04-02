@@ -16,23 +16,35 @@ public class LoopManager : MonoBehaviour
     [Header("Final UI")]
     [SerializeField] private GameObject finalUIPanel;
 
+    private static List<int> unusedAnomalyIndices = new List<int>();
+
     private void Start()
     {
         UpdateLoopUI();
 
-        // Losuj anomalię z 65% szansą (nie powtarzaj tej samej co ostatnio)
+        // 70% szansy na aktywację anomalii
         if (anomalyObjects.Count > 0 && Random.value <= 0.65f)
         {
-            List<int> possibleIndices = new List<int>();
-            for (int i = 0; i < anomalyObjects.Count; i++)
+            // Zainicjalizuj lub zresetuj listę dostępnych indeksów
+            if (unusedAnomalyIndices == null || unusedAnomalyIndices.Count == 0)
             {
-                if (i != lastAnomalyIndex)
-                    possibleIndices.Add(i);
+                unusedAnomalyIndices = new List<int>();
+                for (int i = 0; i < anomalyObjects.Count; i++)
+                    unusedAnomalyIndices.Add(i);
             }
 
-            int randomIndex = possibleIndices[Random.Range(0, possibleIndices.Count)];
-            anomalyObjects[randomIndex].SetActive(true);
-            lastAnomalyIndex = randomIndex;
+            // Losuj z dostępnych indeksów
+            int randomListIndex = Random.Range(0, unusedAnomalyIndices.Count);
+            int chosenIndex = unusedAnomalyIndices[randomListIndex];
+        
+            anomalyObjects[chosenIndex].SetActive(true);
+            unusedAnomalyIndices.RemoveAt(randomListIndex); // usuń z puli
+
+            Debug.Log("Wylosowano anomalię: " + anomalyObjects[chosenIndex].name);
+        }
+        else
+        {
+            Debug.Log("Brak anomalii w tej pętli.");
         }
     }
 
