@@ -1540,7 +1540,7 @@ GameObject:
   - component: {fileID: 599381464}
   - component: {fileID: 599381463}
   - component: {fileID: 599381467}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5858,6 +5858,16 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 1814784750}
+    - target: {fileID: 6576180577880043365, guid: a9fc1f2a21695eb4ebd99144bc01d95a,
+        type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6576180577880043365, guid: a9fc1f2a21695eb4ebd99144bc01d95a,
+        type: 3}
+      propertyPath: groundCheckDistance
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7490547680628866212, guid: a9fc1f2a21695eb4ebd99144bc01d95a,
         type: 3}
       propertyPath: m_Name
