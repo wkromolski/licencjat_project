@@ -4281,6 +4281,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 583210644}
     m_Modifications:
+    - target: {fileID: 799176318461394820, guid: 283aefe4fb9738842bce17b5072dce89,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1976119328, guid: e588f101a126659478c7816b4d712ce4,
+        type: 3}
     - target: {fileID: 1307664849039039969, guid: 283aefe4fb9738842bce17b5072dce89,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4330,6 +4336,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562495274624505756, guid: 283aefe4fb9738842bce17b5072dce89,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 103023534, guid: e588f101a126659478c7816b4d712ce4,
+        type: 3}
+    - target: {fileID: 7417189152581449373, guid: 283aefe4fb9738842bce17b5072dce89,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8891799217430389621, guid: 283aefe4fb9738842bce17b5072dce89,
         type: 3}
@@ -4405,6 +4422,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressEUI: {fileID: 1161696947}
+  cutsceneObject: {fileID: 0}
+  cutsceneTimeline: {fileID: 0}
+  cutsceneTime: 3
 --- !u!65 &1955168672
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4713,6 +4733,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 980365052}
     m_Modifications:
+    - target: {fileID: 131958691601591503, guid: ab3f982ff0d88fc488faf556bc7db9d7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540429957318034064, guid: ab3f982ff0d88fc488faf556bc7db9d7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1915157103, guid: e588f101a126659478c7816b4d712ce4,
+        type: 3}
     - target: {fileID: 4756476565095734270, guid: ab3f982ff0d88fc488faf556bc7db9d7,
         type: 3}
       propertyPath: m_Name
@@ -4768,6 +4799,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7626253198964932216, guid: ab3f982ff0d88fc488faf556bc7db9d7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2010426355, guid: e588f101a126659478c7816b4d712ce4,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5020,7 +5057,7 @@ PrefabInstance:
     - target: {fileID: 3529478170145555636, guid: 4043bdf14b9be8044ade7b94a6173b4d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4193877393779731156, guid: 4043bdf14b9be8044ade7b94a6173b4d,
         type: 3}
@@ -5904,7 +5941,7 @@ PrefabInstance:
     - target: {fileID: 2251121918654840672, guid: bbe664cd39ea9ee46ac0acfcc69934e6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5514500640382705219, guid: bbe664cd39ea9ee46ac0acfcc69934e6,
         type: 3}
@@ -6003,7 +6040,11 @@ PrefabInstance:
         type: 3}
       insertIndex: 13
       addedObject: {fileID: 405911368}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2099406939855450816, guid: bbe664cd39ea9ee46ac0acfcc69934e6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: bbe664cd39ea9ee46ac0acfcc69934e6, type: 3}
 --- !u!1001 &4575213707507515064
 PrefabInstance:
