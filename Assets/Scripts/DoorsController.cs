@@ -8,7 +8,9 @@ public class DoorsController : MonoBehaviour
 
     private bool playerInRange = false;
     private LoopManager loopManager;
+    private float    lastInteractTime = -Mathf.Infinity;
     [SerializeField] private GameObject pressEUI;
+    [SerializeField] private float interactCooldown = 10f;
 
     void Start()
     {
@@ -20,8 +22,11 @@ public class DoorsController : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (!playerInRange) return;
+        
+        if (Input.GetKeyDown(KeyCode.E) && Time.time - lastInteractTime >= interactCooldown)
         {
+            lastInteractTime = Time.time;
             loopManager.ProcessDoorChoice(doorType);
         }
     }
