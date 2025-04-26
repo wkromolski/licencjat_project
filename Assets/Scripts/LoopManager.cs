@@ -21,36 +21,26 @@ public class LoopManager : MonoBehaviour
     private void Start()
     {
         UpdateLoopUI();
-
-        // 70% szansy na aktywację anomalii
+        
         if (anomalyObjects.Count > 0 && Random.value <= 0.65f)
         {
-            // Zainicjalizuj lub zresetuj listę dostępnych indeksów
             if (unusedAnomalyIndices == null || unusedAnomalyIndices.Count == 0)
             {
                 unusedAnomalyIndices = new List<int>();
                 for (int i = 0; i < anomalyObjects.Count; i++)
                     unusedAnomalyIndices.Add(i);
             }
-
-            // Losuj z dostępnych indeksów
+            
             int randomListIndex = Random.Range(0, unusedAnomalyIndices.Count);
             int chosenIndex = unusedAnomalyIndices[randomListIndex];
         
             anomalyObjects[chosenIndex].SetActive(true);
-            unusedAnomalyIndices.RemoveAt(randomListIndex); // usuń z puli
-
-            Debug.Log("Wylosowano anomalię: " + anomalyObjects[chosenIndex].name);
-        }
-        else
-        {
-            Debug.Log("Brak anomalii w tej pętli.");
+            unusedAnomalyIndices.RemoveAt(randomListIndex); 
         }
     }
 
     public void ProcessDoorChoice(string doorType)
     {
-        // Krok 1: sprawdź, czy jakakolwiek anomalia jest aktywna
         bool anomalyActive = false;
         foreach (GameObject anomaly in anomalyObjects)
         {
@@ -60,8 +50,7 @@ public class LoopManager : MonoBehaviour
                 break;
             }
         }
-
-        // Krok 2: zaktualizuj wynik na podstawie wyboru drzwi i anomalii
+        
         if (doorType == "End")
         {
             loopData.loopValue = anomalyActive ? loopData.loopValue + 1 : 0;
@@ -70,11 +59,9 @@ public class LoopManager : MonoBehaviour
         {
             loopData.loopValue = anomalyActive ? 0 : loopData.loopValue + 1;
         }
-
-        // Krok 3: zaktualizuj UI
+        
         UpdateLoopUI();
-
-        // Krok 4: wygrana albo kolejna pętla
+        
         if (loopData.loopValue >= 7)
         {
             ShowFinalUI();

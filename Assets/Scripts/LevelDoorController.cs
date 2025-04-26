@@ -49,16 +49,17 @@ public class LevelDoorController : MonoBehaviour
             if (LoadingScreenManager.Instance != null)
             {
                 //kod Sigmy
-                //LoadingScreenManager.Instance.LoadSceneWithTransition("Loop");
+                LoadingScreenManager.Instance.LoadSceneWithTransition("Loop");
                 
             }
             else
             {
                 //kod Sigmy
-                //SceneManager.LoadScene("Loop");
+                SceneManager.LoadScene("Loop");
 
-                StartCoroutine(CutsceneRoutine());
-                cutsceneTimeline.Play();
+                //Wojtkowy kod
+                //StartCoroutine(CutsceneRoutine());
+                //cutsceneTimeline.Play();
             }
         }
     }
