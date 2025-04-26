@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
+using UnityEngine.Timeline;
 
 public class LevelDoorController : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private GameObject pressEUI;
+    [SerializeField] private GameObject cutsceneObject;
+    [Header("Cutscene - exit the door")]
+    [SerializeField] private PlayableDirector cutsceneTimeline;
+    [SerializeField] private float cutsceneTime = 3;
 
     private bool playerInRange = false;
 
@@ -42,12 +48,24 @@ public class LevelDoorController : MonoBehaviour
         {
             if (LoadingScreenManager.Instance != null)
             {
-                LoadingScreenManager.Instance.LoadSceneWithTransition("Loop");
+                //kod Sigmy
+                //LoadingScreenManager.Instance.LoadSceneWithTransition("Loop");
+                
             }
             else
             {
-                SceneManager.LoadScene("Loop");
+                //kod Sigmy
+                //SceneManager.LoadScene("Loop");
+
+                StartCoroutine(CutsceneRoutine());
+                cutsceneTimeline.Play();
             }
         }
+    }
+
+    IEnumerator CutsceneRoutine()
+    {
+        yield return new WaitForSeconds(cutsceneTime);
+        SceneManager.LoadScene("Loop");
     }
 }
