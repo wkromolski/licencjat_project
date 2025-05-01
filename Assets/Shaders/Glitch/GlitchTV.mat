@@ -81,5 +81,5 @@ Material:
     - _SegmentSize: 0.12
     - _SmoothGlitchStrength: 0.1
     m_Colors:
-    - _Color: {r: 0.84313726, g: 0.44759953, b: 0.13333333, a: 1}
+    - _Color: {r: 0.93207544, g: 0.46663037, b: 0.12486295, a: 1}
   m_BuildTextureStacks: []
