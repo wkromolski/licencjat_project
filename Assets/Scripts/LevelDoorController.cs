@@ -9,7 +9,8 @@ public class LevelDoorController : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private GameObject pressEUI;
-    [SerializeField] private GameObject cutsceneObject;
+
+    //Wojtkowy kod
     [Header("Cutscene - exit the door")]
     [SerializeField] private PlayableDirector cutsceneTimeline;
     [SerializeField] private float cutsceneTime = 3;
@@ -49,21 +50,25 @@ public class LevelDoorController : MonoBehaviour
             if (LoadingScreenManager.Instance != null)
             {
                 //kod Sigmy
-                LoadingScreenManager.Instance.LoadSceneWithTransition("Loop");
-                
+                //LoadingScreenManager.Instance.LoadSceneWithTransition("Loop");
+
+                //Wojtkowy kod
+                StartCoroutine(CutsceneRoutine());
+                cutsceneTimeline.Play();
             }
             else
             {
                 //kod Sigmy
-                SceneManager.LoadScene("Loop");
+                //SceneManager.LoadScene("Loop");
 
                 //Wojtkowy kod
-                //StartCoroutine(CutsceneRoutine());
-                //cutsceneTimeline.Play();
+                StartCoroutine(CutsceneRoutine());
+                cutsceneTimeline.Play();
             }
         }
     }
 
+    //Wojtkowy kod
     IEnumerator CutsceneRoutine()
     {
         yield return new WaitForSeconds(cutsceneTime);

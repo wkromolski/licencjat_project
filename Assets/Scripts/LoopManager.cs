@@ -68,7 +68,11 @@ public class LoopManager : MonoBehaviour
         }
         else
         {
-            LoadingScreenManager.Instance.LoadSceneWithTransition("Loop");
+            //kod Sigmy
+            //LoadingScreenManager.Instance.LoadSceneWithTransition("Loop");
+
+            //Wojtkowy kod
+            SceneManager.LoadScene("Loop");
         }
     }
     

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class DoorsController : MonoBehaviour
 {
@@ -11,6 +13,11 @@ public class DoorsController : MonoBehaviour
     private float    lastInteractTime = -Mathf.Infinity;
     [SerializeField] private GameObject pressEUI;
     [SerializeField] private float interactCooldown = 10f;
+
+    //Wojtkowy kod
+    [Header("Cutscene - exit the door")]
+    [SerializeField] private PlayableDirector cutsceneTimeline;
+    [SerializeField] private float cutsceneTime = 3;
 
     void Start()
     {
@@ -27,7 +34,13 @@ public class DoorsController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && Time.time - lastInteractTime >= interactCooldown)
         {
             lastInteractTime = Time.time;
-            loopManager.ProcessDoorChoice(doorType);
+
+            //kod Sigmy
+            //loopManager.ProcessDoorChoice(doorType);
+
+            //Wojtkowy kod
+            StartCoroutine(CutsceneRoutine());
+            cutsceneTimeline.Play();
         }
     }
     
@@ -46,5 +59,12 @@ public class DoorsController : MonoBehaviour
         playerInRange = true;
         if (pressEUI != null)
             pressEUI.SetActive(false);
+    }
+
+    //Wojtkowy kod
+    IEnumerator CutsceneRoutine()
+    {
+        yield return new WaitForSeconds(cutsceneTime);
+        loopManager.ProcessDoorChoice(doorType);
     }
 }
