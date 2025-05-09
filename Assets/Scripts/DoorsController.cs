@@ -60,18 +60,17 @@ public class DoorsController : MonoBehaviour
 
             if (pressEUI) pressEUI.SetActive(false);
             
-            loopManager.ProcessDoorChoice(doorType);
-            
             if (cutsceneTimeline) cutsceneTimeline.Play();
             
             if (triggerCol) triggerCol.enabled = false;
 
-            StartCoroutine(WaitCutscene());
+            StartCoroutine(CutsceneRoutine());
         }
     }
 
-    private System.Collections.IEnumerator WaitCutscene()
+    IEnumerator CutsceneRoutine()
     {
         yield return new WaitForSeconds(cutsceneTime);
+        loopManager.ProcessDoorChoice(doorType);
     }
 }
