@@ -12,7 +12,7 @@ public class TimeController : MonoBehaviour
     
     [Header("Tick Settings")]
     public float brightTickInterval = 1f;
-    public float darkTickInterval = 0.5f;
+    //public float darkTickInterval = 0.5f;
     public float tickDuration = 0.2f;
     private const float secondTickAngle = -6f;
     private const float minuteTickAngle = -6f;
@@ -54,7 +54,7 @@ public class TimeController : MonoBehaviour
                 minuteHand.DORotate(newMinuteRotation, tickDuration).SetEase(Ease.OutQuad);
             }
             bool lampOn = LanternController.IsLanternOn;
-            float tickInterval = lampOn ? brightTickInterval : darkTickInterval;
+           float tickInterval = brightTickInterval;
 
             yield return new WaitForSeconds(tickInterval);
 
@@ -64,7 +64,7 @@ public class TimeController : MonoBehaviour
             UpdateClockUIText();
         }
         
-        LoadingScreenManager.Instance.LoadSceneWithTransition("Level");
+        LoadingScreenManager.Instance.LoadSceneWithTransition("Loop");
     }
 
 

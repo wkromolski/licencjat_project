@@ -17,9 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private float stepTimer = 0f;
     private bool wasWalkingLastFrame = false;
     
-    [Header("Ground Check")]
-    [SerializeField] private LayerMask groundMask;
-    [SerializeField] private float groundCheckDistance = 5f;
+    [SerializeField] private float groundY = 1.344f;
 
     void Update()
     {
@@ -52,26 +50,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         wasWalkingLastFrame = isWalking;
-    }
-    public void SnapToGround()
-    {
-        Vector3 rayOrigin = transform.position + Vector3.up * 0.5f;
-        
-        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, groundCheckDistance, groundMask))
+
+        if (Mathf.Abs(transform.position.y - groundY) > 0.001f)
         {
-            Debug.Log("SnapToGround: the floor at height:" + hit.point.y);
-            
             controller.enabled = false;
-            
-            Vector3 newPos = transform.position;
-            newPos.y = hit.point.y;
-            transform.position = newPos;
-            
+
+            Vector3 pos = transform.position;
+            pos.y = groundY;
+            transform.position = pos;
+
             controller.enabled = true;
-        }
-        else
-        {
-            Debug.Log("SnapToGround: dupa" + groundCheckDistance);
         }
     }
 

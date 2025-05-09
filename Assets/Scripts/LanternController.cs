@@ -37,10 +37,5 @@ public class LanternController : MonoBehaviour
         if (layout1) layout1.SetActive(IsLanternOn);
         if (layout2) layout2.SetActive(!IsLanternOn);
         
-        PlayerMovement pm = FindObjectOfType<PlayerMovement>();
-        if (pm != null)
-        {
-            pm.SnapToGround();
-        }
     }
 }
