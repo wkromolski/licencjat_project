@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anomalies
   - LoopUI
+  - npc
   layers:
   - Default
   - TransparentFX
