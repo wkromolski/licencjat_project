@@ -9586,7 +9586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableCharacterDelay: 5
-  startDissolving: 3
+  startDissolvingDelay: 3
   jumpScareAudio: {fileID: 1040653774}
   lookingRayLength: 10
   dissolvingController: {fileID: 1932975880}
@@ -11190,7 +11190,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8634701425663583093}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8634701425663583094}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b5eb86a0be3f6248bc5e71e205c4d55, type: 3}
@@ -12186,7 +12186,7 @@ PrefabInstance:
     - target: {fileID: 5476352301032551508, guid: 95201ced29b6d84489cadef6f9d4f5e7,
         type: 3}
       propertyPath: anomalyObjects.Array.size
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5476352301032551508, guid: 95201ced29b6d84489cadef6f9d4f5e7,
         type: 3}
@@ -12268,6 +12268,11 @@ PrefabInstance:
       propertyPath: anomalyObjects.Array.data[15]
       value: 
       objectReference: {fileID: 506009106}
+    - target: {fileID: 5476352301032551508, guid: 95201ced29b6d84489cadef6f9d4f5e7,
+        type: 3}
+      propertyPath: anomalyObjects.Array.data[16]
+      value: 
+      objectReference: {fileID: 8634701425663583094}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14259,7 +14264,12 @@ PrefabInstance:
     - target: {fileID: 5351040920005937798, guid: 26b10ac2b01d5cc4c9c52b9251363069,
         type: 3}
       propertyPath: m_Name
-      value: postac 1
+      value: postac 1 Anomaly
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351040920005937798, guid: 26b10ac2b01d5cc4c9c52b9251363069,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5509797121089773242, guid: 26b10ac2b01d5cc4c9c52b9251363069,
         type: 3}
@@ -14316,6 +14326,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b10ac2b01d5cc4c9c52b9251363069, type: 3}
+--- !u!1 &8634701425663583094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5351040920005937798, guid: 26b10ac2b01d5cc4c9c52b9251363069,
+    type: 3}
+  m_PrefabInstance: {fileID: 8634701425663583093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9154327286599429130
 PrefabInstance:
   m_ObjectHideFlags: 0
