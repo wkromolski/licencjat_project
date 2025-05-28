@@ -4,12 +4,13 @@ using UnityEngine;
 public class PlayerLooking : MonoBehaviour
 {
     [SerializeField] private float disableCharacterDelay = 5f;
-    [SerializeField] private float startDissolving = 3f;
+    [SerializeField] private float startDissolvingDelay = 3f;
 
     [SerializeField] private AudioSource jumpScareAudio;
     private bool isLooking;
     [SerializeField] float lookingRayLength = 10f;
     [SerializeField] private DissolvingController dissolvingController;
+
 
     void Update()
     {
@@ -39,22 +40,16 @@ public class PlayerLooking : MonoBehaviour
 
             {
                 isLooking = hitGameObject.CompareTag("npc");
-                Debug.Log("Trafiono NPC: " + hitGameObject.name + ". Wy³¹czam obiekt za " + disableCharacterDelay + " sekund.");
-                StartCoroutine(DisableObjectAfterDelay(hitGameObject, disableCharacterDelay));
-                StartCoroutine(StartDissolving(startDissolving));
-               jumpScareAudio.PlayOneShot(jumpScareAudio.clip, 0.3f);
+                Debug.Log("Hit NPC: " + hitGameObject.name + ". Dissolving character in " + startDissolvingDelay + " seconds.");
+               // StartCoroutine(DisableObjectAfterDelay(hitGameObject, disableCharacterDelay));
+                StartCoroutine(StartDissolving(startDissolvingDelay));
+                jumpScareAudio.PlayOneShot(jumpScareAudio.clip, 0.3f);
+                dissolvingController.TurnOffCollider();
 
 
             }
-            else
-            {
-                //Debug.Log("Trafiono: " + hitGameObject.name);
-            }
         }
-        else
-        {
-           // Debug.Log("-");
-        }
+  
     }
 
     private IEnumerator DisableObjectAfterDelay(GameObject objectToDisable, float delay)

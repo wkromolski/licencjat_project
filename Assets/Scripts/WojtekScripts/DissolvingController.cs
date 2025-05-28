@@ -9,11 +9,14 @@ public class DissolvingController : MonoBehaviour
     private List<Material> allSkinnedMaterials;
     private float dissolveRate = 0.0125f;
     private float refreshRate = 0.025f;
+    private CapsuleCollider npcCollider;
 
 
 
     void Start()
     {
+        npcCollider = GetComponent<CapsuleCollider>();
+
         allSkinnedMaterials = new List<Material>();
 
         if (skinnedMeshRenderer != null && skinnedMeshRenderer.Count > 0)
@@ -53,5 +56,10 @@ public class DissolvingController : MonoBehaviour
                 yield return new WaitForSeconds(refreshRate);
             }
         }
+    }
+
+    public void TurnOffCollider()
+    {
+        npcCollider.enabled = false;
     }
 }
