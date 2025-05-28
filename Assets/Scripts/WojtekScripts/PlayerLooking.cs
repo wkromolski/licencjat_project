@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class PlayerLooking : MonoBehaviour
 {
-    [SerializeField] private float disableCharacterDelay = 3f;
+    [SerializeField] private float disableCharacterDelay = 5f;
+    [SerializeField] private float startDissolving = 3f;
+
     [SerializeField] private AudioSource jumpScareAudio;
     private bool isLooking;
     [SerializeField] float lookingRayLength = 10f;
+    [SerializeField] private DissolvingController dissolvingController;
 
     void Update()
     {
@@ -38,6 +41,7 @@ public class PlayerLooking : MonoBehaviour
                 isLooking = hitGameObject.CompareTag("npc");
                 Debug.Log("Trafiono NPC: " + hitGameObject.name + ". Wy³¹czam obiekt za " + disableCharacterDelay + " sekund.");
                 StartCoroutine(DisableObjectAfterDelay(hitGameObject, disableCharacterDelay));
+                StartCoroutine(StartDissolving(startDissolving));
                jumpScareAudio.PlayOneShot(jumpScareAudio.clip, 0.3f);
 
 
@@ -66,6 +70,18 @@ public class PlayerLooking : MonoBehaviour
             Debug.Log(objectToDisable.name + " zosta³ wy³¹czony po " + delay + " sekundach.");
 
         }
+    }
+
+    private IEnumerator StartDissolving(float dissolvingdelay)
+    {
+
+        yield return new WaitForSeconds(dissolvingdelay);
+
+
+       
+            dissolvingController.Dissolve();
+
+       
     }
 
     public bool IsLooking()
