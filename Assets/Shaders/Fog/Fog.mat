@@ -51,7 +51,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Amplitude: 10
-    - _Depth_Fade: 0.7
+    - _Depth_Fade: 0.3
     - _Fog_Height: 0.15
     - _QueueControl: 0
     - _QueueOffset: 0
