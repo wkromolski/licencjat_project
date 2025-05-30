@@ -62,7 +62,7 @@ public class LoopManager : MonoBehaviour
         
         UpdateLoopUI();
         
-        if (loopData.loopValue >= 7)
+        if (loopData.loopValue >= 8)
         {
             ShowFinalUI();
         }
