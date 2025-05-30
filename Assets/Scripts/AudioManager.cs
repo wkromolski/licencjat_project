@@ -11,9 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource tickSource;
     [SerializeField] private AudioSource nailsSource;
     [SerializeField] private AudioSource breathSource;
-    [SerializeField] private AudioSource loriSource;
-    
-    
+    [SerializeField] private AudioSource creakingSource;
     
     [Header("Footstep Sounds")]
     [SerializeField] AudioClip[] stepSounds;
@@ -30,12 +28,15 @@ public class AudioManager : MonoBehaviour
     private int lastPlayedCreepyIndex = -1;
     [SerializeField] [Range(0f, 1f)] private float creepySoundVolume = 0.5f;
     
-    [Header("Breath Sound")]
-    [SerializeField] private AudioClip breathSound;
-    [SerializeField] [Range(0f, 1f)] private float breathSoundVolume = 0.5f;
+    [Header("Creaking Sound")]
+    [SerializeField] private AudioClip[] creakingSound;
+    private int lastPlayedCreakIndex = -1;
+    [SerializeField] [Range(0f, 1f)] private float creaksSoundVolume = 0.5f;
     
-    [SerializeField] private AudioClip loriSound;
-    [SerializeField] [Range(0f, 1f)] private float loriSoundVolume = 0.5f;
+    [Header("Breath Sound")]
+    [SerializeField] private AudioClip[] breathSound;
+    private int lastPlayedBreathIndex = -1;
+    [SerializeField] [Range(0f, 1f)] private float breathSoundVolume = 0.5f;
     
     
     private void Awake()
@@ -84,20 +85,20 @@ public class AudioManager : MonoBehaviour
         AudioSource.PlayClipAtPoint(ticksSounds[randomIndex], transform.position, 1f);
     }
 
-    public void PlayLoriSound()
-    {
-        if (loriSound != null && loriSource != null)
-        {
-            loriSource.PlayOneShot(loriSound, loriSoundVolume);
-        }
-    }
-
     public void PlayBreathSound()
     {
-        if (breathSound != null && breathSource != null)
+        if (breathSound.Length == 0 || breathSource == null)
+            return;
+
+        int randomIndex;
+        do
         {
-            breathSource.PlayOneShot(breathSound, breathSoundVolume);
-        }
+            randomIndex = Random.Range(0, breathSound.Length);
+        } while (randomIndex == lastPlayedBreathIndex);
+
+        lastPlayedBreathIndex = randomIndex;
+        breathSource.clip = breathSound[randomIndex];
+        breathSource.Play();
     }
 
     public void PlayNails()
@@ -114,6 +115,22 @@ public class AudioManager : MonoBehaviour
         lastPlayedCreepyIndex = randomIndex;
         nailsSource.clip = creepySounds[randomIndex];
         nailsSource.Play();
+    }
+    
+    public void PlayCreakSound()
+    {
+        if (creakingSound.Length == 0 || creakingSource == null)
+            return;
+
+        int randomIndex;
+        do
+        {
+            randomIndex = Random.Range(0, breathSound.Length);
+        } while (randomIndex == lastPlayedCreakIndex);
+
+        lastPlayedCreakIndex = randomIndex;
+        creakingSource.clip = creakingSound[randomIndex];
+        creakingSource.Play();
     }
 
     private IEnumerator BreathSoundCoroutine()
@@ -147,10 +164,23 @@ public class AudioManager : MonoBehaviour
             yield return new WaitForSeconds(20f - randomDelay);
         }
     }
+    
+    
+    private IEnumerator CreakingSoundCoroutine()
+    {
+        while (true)
+        {
+            float randomDelay = Random.Range(5f, 20f);
+            yield return new WaitForSeconds(randomDelay);
+                PlayCreakSound();
+            yield return new WaitForSeconds(20f - randomDelay);
+        }
+    }
 
     private void Start()
     {
         StartCoroutine(BreathSoundCoroutine());
         StartCoroutine(NailsSoundCoroutine());
+        StartCoroutine(CreakingSoundCoroutine());
     }
 }

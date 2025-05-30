@@ -6,6 +6,9 @@ public class TVsAnomaly : MonoBehaviour
 {   
     [SerializeField] private GameObject[] objectsToEnable;
     
+    [SerializeField] private AudioSource tvSource;
+    [SerializeField] private AudioClip tvSound;
+    
     private void OnEnable()
     {
         ActivateAnomaly();
@@ -17,6 +20,12 @@ public class TVsAnomaly : MonoBehaviour
         {
             if (obj != null)
                 obj.SetActive(true);
+        }
+
+        if (tvSource != null)
+        {
+            tvSource.clip = tvSound;
+            tvSource.Play();
         }
     }
 
