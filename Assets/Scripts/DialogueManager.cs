@@ -21,8 +21,12 @@ public class DialogueManager : MonoBehaviour
 
     private bool isDialogueTyping;
 
+    [SerializeField] GameObject background;
+
     private void Awake()
     {
+        background.SetActive(false);
+        
         if (Instance == null)
             Instance = this;
 
@@ -33,6 +37,7 @@ public class DialogueManager : MonoBehaviour
     {
         currentDialogue = dialogue;
         isDialogueActive = true;
+        background.SetActive(true);
 
         lines.Clear();
 
@@ -57,7 +62,7 @@ public class DialogueManager : MonoBehaviour
         currentLine = lines.Dequeue();
 
         // Czekaj, aż nadejdzie odpowiedni czas na wyświetlenie linii
-        float waitTime = currentLine.startTime; // Czas startowy (w sekundach)
+        float waitTime = currentLine.startTime;
         yield return new WaitForSeconds(waitTime);
 
         dialogueArea.gameObject.SetActive(true);
@@ -75,8 +80,7 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
         isDialogueTyping = false;
-        // Kontynuujemy wyświetlanie następnej linii po zakończeniu poprzedniej
-        yield return new WaitForSeconds(1f); // Przerwa pomiędzy liniami (opcjonalna)
+        yield return new WaitForSeconds(1f);
         StartCoroutine(DisplayNextDialogueLineWithSync());
     }
 
@@ -84,5 +88,6 @@ public class DialogueManager : MonoBehaviour
     {
         isDialogueActive = false;
         dialogueArea.text = "";
+        background.SetActive(false);
     }
 }

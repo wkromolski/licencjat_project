@@ -18,7 +18,7 @@ MonoBehaviour:
   - line: If you don't find an anomaly, turn back.
     startTime: 0.3
   - line: If you find any anomaly, do NOT turn back.
-    startTime: 0.7
-  - line: Reach 6th loop to escape.
-    startTime: 0.85
+    startTime: 0.67
+  - line: Reach 7th loop to escape.
+    startTime: 0.8
   isComplete: 1

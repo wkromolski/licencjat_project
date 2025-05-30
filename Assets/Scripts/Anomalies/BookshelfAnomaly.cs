@@ -12,6 +12,9 @@ public class BookshelfAnomaly : MonoBehaviour
     [SerializeField] private float jumpPower = 1f; 
     [SerializeField] private int jumpCount = 2;
     [SerializeField] private Rigidbody rb;
+    
+    [SerializeField] private AudioSource booksSource1;
+    [SerializeField] private AudioClip booksSound1;
 
     private bool triggered = false; 
 
@@ -22,6 +25,8 @@ public class BookshelfAnomaly : MonoBehaviour
             triggered = true;
             LaunchBooks();
             rb.isKinematic = false;
+            
+            PlayThud();
         }
     }
 
@@ -44,7 +49,7 @@ public class BookshelfAnomaly : MonoBehaviour
                 .SetEase(Ease.OutQuad);
     
             jumpTween.OnUpdate(() => {
-                if (jumpTween.ElapsedPercentage() >= 0.2f && rb.isKinematic)
+                if (jumpTween.ElapsedPercentage() >= 0.05f && rb.isKinematic)
                 {
                     rb.isKinematic = false;
                 }
@@ -56,5 +61,15 @@ public class BookshelfAnomaly : MonoBehaviour
                 Random.Range(-rotationAmount, rotationAmount)
             ), launchTime, RotateMode.FastBeyond360);
         }
+    }
+
+    private void PlayThud()
+    {
+        if (booksSource1 != null)
+        {
+            booksSource1.clip = booksSound1;
+            booksSource1.Play();
+        }
+     
     }
 }
