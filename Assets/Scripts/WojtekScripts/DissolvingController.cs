@@ -41,6 +41,7 @@ public class DissolvingController : MonoBehaviour
     }
 
 
+
     IEnumerator DissolveCo()
     {
         if (allSkinnedMaterials != null && allSkinnedMaterials.Count > 0)
@@ -57,6 +58,8 @@ public class DissolvingController : MonoBehaviour
             }
         }
     }
+
+
 
     public void TurnOffCollider()
     {

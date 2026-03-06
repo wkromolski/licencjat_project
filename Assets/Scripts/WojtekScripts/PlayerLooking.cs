@@ -10,6 +10,8 @@ public class PlayerLooking : MonoBehaviour
     private bool isLooking;
     [SerializeField] float lookingRayLength = 10f;
     [SerializeField] private DissolvingController dissolvingController;
+    [SerializeField] private DissolvingController dissolvingControllerCharWalking;
+
 
 
     void Update()
@@ -75,6 +77,7 @@ public class PlayerLooking : MonoBehaviour
 
        
             dissolvingController.Dissolve();
+
 
        
     }
