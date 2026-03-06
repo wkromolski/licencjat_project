@@ -25,8 +25,8 @@ public class Chase : MonoBehaviour
     [SerializeField] private AudioSource chaseSound;
     [SerializeField] private AudioSource footstepsSound;
 
-    [SerializeField] private float fadeSpeed = 0.5f; // Jak szybko ma si? wycisza? (wi?ksza liczba = szybciej)
-    [SerializeField] private float fadeFootstepsSpeed = 0.1f; // Jak szybko ma si? wycisza? (wi?ksza liczba = szybciej)
+    [SerializeField] private float fadeSpeed = 0.5f; 
+    [SerializeField] private float fadeFootstepsSpeed = 0.1f;
 
     void Start()
     {
@@ -68,26 +68,20 @@ public class Chase : MonoBehaviour
             }
 
 
-            //if (chaseSound.isPlaying && dissolvingController.isDissolving == false)
-            //{
-               
-            //    chaseSound.Stop();
-            //}
+
 
 
             //aiAnim.SetTrigger("sprint");
             float distance = Vector3.Distance(player.position, ai.transform.position);
             if (distance <= catchDistance)
             {
-               // dissolvingController.Dissolve();
-                Debug.Log("Z?APANY!!!");
+
                 //player.gameObject.SetActive(false);
                 //aiAnim.ResetTrigger("walk");
 
                 //aiAnim.ResetTrigger("sprint");
                 //aiAnim.SetTrigger("jumpscare");
                 //StartCoroutine(deathRoutine());
-                //chasing = false;
 
 
                 chaseSound.volume -= fadeSpeed * Time.deltaTime;
@@ -126,7 +120,6 @@ public class Chase : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Sprawdzamy, czy obiekt, z którym si? zderzyli?my, ma tag "Player"
         if (other.CompareTag("Player"))
         {
             dissolvingController.Dissolve();
@@ -156,15 +149,5 @@ public class Chase : MonoBehaviour
         SceneManager.LoadScene(deathScene);
     }
 
-    private IEnumerator StartDissolving(float dissolvingdelay)
-    {
 
-        yield return new WaitForSeconds(dissolvingdelay);
-
-
-
-        dissolvingController.Dissolve();
-
-
-    }
 }

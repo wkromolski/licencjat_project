@@ -8,8 +8,7 @@ public class DissolvingControllerNonCoroutine : MonoBehaviour
     [SerializeField] private List<SkinnedMeshRenderer> skinnedMeshRenderer;
     private List<Material> allSkinnedMaterials;
 
-    // Zmieniamy podej?cie: zamiast sta?ych kroków, u?ywamy czasu (sekund)
-    [SerializeField] private float dissolveSpeed = 0.5f; // Czas trwania efektu w sekundach
+    [SerializeField] private float dissolveSpeed = 0.5f;
     private float dissolveCounter = 0;
     public bool isDissolving = false;
 
@@ -26,8 +25,6 @@ public class DissolvingControllerNonCoroutine : MonoBehaviour
             {
                 if (renderer != null)
                 {
-                    // U?ywamy .sharedMaterials lub pobieramy kopie, 
-                    // zale?nie od tego, czy chcesz zmienia? materia? globalnie czy lokalnie
                     allSkinnedMaterials.AddRange(renderer.materials);
                 }
             }
@@ -54,8 +51,7 @@ public class DissolvingControllerNonCoroutine : MonoBehaviour
 
     private void UpdateDissolve()
     {
-        // Zwi?kszamy licznik o czas, który up?yn?? od ostatniej klatki
-        // Dzielenie przez dissolveSpeed pozwala kontrolowa? czas trwania (np. 2 sekundy)
+
         dissolveCounter += Time.deltaTime * dissolveSpeed;
 
         for (int i = 0; i < allSkinnedMaterials.Count; i++)
@@ -63,7 +59,6 @@ public class DissolvingControllerNonCoroutine : MonoBehaviour
             allSkinnedMaterials[i].SetFloat("_DissolveAmount", dissolveCounter);
         }
 
-        // Zatrzymujemy proces, gdy osi?gniemy pe?ne rozpuszczenie (1.0)
         if (dissolveCounter >= 1f)
         {
             isDissolving = false;
