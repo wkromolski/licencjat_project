@@ -45,7 +45,6 @@ public class DissolvingControllerNonCoroutine : MonoBehaviour
         {
             dissolveCounter = 0;
             isDissolving = true;
-            Debug.Log("HAHAHAH");
         }
     }
 
