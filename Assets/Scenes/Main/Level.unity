@@ -8319,31 +8319,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1061109575126376154, guid: cc7860650f684144aa39f86471bc1d4d,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 44
-      objectReference: {fileID: 0}
-    - target: {fileID: 1061109575126376154, guid: cc7860650f684144aa39f86471bc1d4d,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 44
-      objectReference: {fileID: 0}
     - target: {fileID: 2202404414535866204, guid: cc7860650f684144aa39f86471bc1d4d,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 193083518}
-    - target: {fileID: 5438560485879061168, guid: cc7860650f684144aa39f86471bc1d4d,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960321511675148380, guid: cc7860650f684144aa39f86471bc1d4d,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 600
-      objectReference: {fileID: 0}
     - target: {fileID: 7996117064796284866, guid: cc7860650f684144aa39f86471bc1d4d,
         type: 3}
       propertyPath: m_Pivot.x
