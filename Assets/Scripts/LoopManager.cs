@@ -12,11 +12,18 @@ public class LoopManager : MonoBehaviour
     [Header("Anomaly System")]
     public List<GameObject> anomalyObjects;
     private static int lastAnomalyIndex = -1;
+    
+    private static List<int> recentAnomalies = new List<int>();
+    private const int maxRecent = 4;
 
+    [Header("Radio System")]
+    [SerializeField] private GameObject radioTrigger;
+
+    private static int lastRadioIndex = -1;
+    
     [Header("Final UI")]
     [SerializeField] private GameObject finalUIPanel;
-
-    private static List<int> unusedAnomalyIndices = new List<int>();
+    
 
     private void Start()
     {
@@ -24,18 +31,33 @@ public class LoopManager : MonoBehaviour
         
         if (anomalyObjects.Count > 0 && Random.value <= 0.65f)
         {
-            if (unusedAnomalyIndices == null || unusedAnomalyIndices.Count == 0)
+            List<int> possible = new List<int>();
+
+            for (int i = 0; i < anomalyObjects.Count; i++)
             {
-                unusedAnomalyIndices = new List<int>();
-                for (int i = 0; i < anomalyObjects.Count; i++)
-                    unusedAnomalyIndices.Add(i);
+                if (!recentAnomalies.Contains(i))
+                    possible.Add(i);
             }
-            
-            int randomListIndex = Random.Range(0, unusedAnomalyIndices.Count);
-            int chosenIndex = unusedAnomalyIndices[randomListIndex];
+
+            if (possible.Count > 0)
+            {
+                int chosenIndex = possible[Random.Range(0, possible.Count)];
+
+                anomalyObjects[chosenIndex].SetActive(true);
+
+                recentAnomalies.Add(chosenIndex);
+
+                if (recentAnomalies.Count > maxRecent)
+                    recentAnomalies.RemoveAt(0);
+            }
+        }
         
-            anomalyObjects[chosenIndex].SetActive(true);
-            unusedAnomalyIndices.RemoveAt(randomListIndex); 
+        if (radioTrigger != null)
+        {
+            if (Random.value <= 0.15f)
+                radioTrigger.SetActive(true);
+            else
+                radioTrigger.SetActive(false);
         }
     }
 
