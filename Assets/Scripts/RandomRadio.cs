@@ -4,55 +4,39 @@ using UnityEngine;
 
 public class RandomRadio : MonoBehaviour
 {
-    [Header("Audio Source")]
-    [SerializeField] private AudioSource radioSource;
+    [Header("Radio News Objects")]
+    [SerializeField] private List<GameObject> radioNews;
 
-    [Header("Radio Clips")]
-    [SerializeField] private AudioClip[] radioClips;
-
-    [SerializeField, Range(0f,1f)]
-    private float volume = 0.6f;
-
-    private static int lastPlayedIndex = -1;
-
-    private bool isPlaying = false;
+    private static int lastIndex = -1;
+    private bool triggered = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player") || isPlaying)
+        if (!other.CompareTag("Player") || triggered)
             return;
 
-        StartCoroutine(PlayRadio());
-    }
+        triggered = true;
 
-    private IEnumerator PlayRadio()
-    {
-        isPlaying = true;
+        int index = GetRandomNews();
 
-        int chosenIndex = GetRandomClip();
+        if (radioNews[index] != null)
+            radioNews[index].SetActive(true);
 
-        radioSource.clip = radioClips[chosenIndex];
-        radioSource.volume = volume;
-        radioSource.Play();
-
-        while (radioSource.isPlaying)
-            yield return null;
-
-        isPlaying = false;
         gameObject.SetActive(false);
     }
 
-    private int GetRandomClip()
+    private int GetRandomNews()
     {
         int index;
 
         do
         {
-            index = Random.Range(0, radioClips.Length);
+            index = Random.Range(0, radioNews.Count);
         }
-        while (index == lastPlayedIndex && radioClips.Length > 1);
+        while (index == lastIndex && radioNews.Count > 1);
 
-        lastPlayedIndex = index;
+        lastIndex = index;
+
         return index;
     }
 }
