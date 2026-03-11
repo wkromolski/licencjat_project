@@ -924,7 +924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1993409748746874292}
   normalSprite: {fileID: -1344924344, guid: 5808cbaebf24a6846a9484a826815ed5, type: 3}
-  anomalySprite: {fileID: 2005960693, guid: 5808cbaebf24a6846a9484a826815ed5, type: 3}
+  anomalySprite: {fileID: 21300000, guid: cf0bb31e20c90be44826fc2d837de468, type: 3}
 --- !u!1001 &205668802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15022,7 +15022,11 @@ PrefabInstance:
         type: 3}
       insertIndex: 33
       addedObject: {fileID: 96563800}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2099406939855450816, guid: bbe664cd39ea9ee46ac0acfcc69934e6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: bbe664cd39ea9ee46ac0acfcc69934e6, type: 3}
 --- !u!4 &4369234694862739035 stripped
 Transform:
