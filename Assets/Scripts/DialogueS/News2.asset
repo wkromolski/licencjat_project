@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc6e7fe16dba1f246b63e8a0689f8a0e, type: 3}
-  m_Name: Dialogue1
+  m_Name: News2
   m_EditorClassIdentifier: 
   dialogueLines:
-  - line: Look for anomalies in the light and dark.
-    startTime: 0.69
-  - line: It is recommended to turn back if no anomalies appear.
-    startTime: 0.15
-  - line: If any anomaly occurs, turning back is NOT recommended.
-    startTime: 0.15
-  - line: It is necessary to reach the 7th loop to escape.
-    startTime: 0.05
+  - line: ...the cold case on Maple Avenue reveals no clear culprit. Officials urge
+      calm,
+    startTime: 1.8
+  - line: 'yet the details are unsettling: a man seen entering the house moments
+      before the incident,'
+    startTime: 0.18
+  - line: "now vanished from reports. Whether coincidence or intent, residents can't
+      shake\u2026"
+    startTime: 0.8
   isComplete: 1

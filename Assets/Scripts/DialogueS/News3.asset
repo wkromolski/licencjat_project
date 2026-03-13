@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6e7fe16dba1f246b63e8a0689f8a0e, type: 3}
+  m_Name: News3
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - line: "\u2026authorities continue to investigate the mysterious death. No suspect
+      has been named, but\u2014"
+    startTime: 0.7
+  - line: "But William, you pathetic fool\u2026"
+    startTime: 0.7
+  - line: "staring at your own reflection in the dark\u2026 "
+    startTime: 0.65
+  - line: "you really thought you could hide your little secret, didn\u2019t you?"
+    startTime: 0.5
+  - line: 'But here you are, trapped in a place where every shadow remembers your
+      name. '
+    startTime: 0.5
+  - line: And yet, you still refuse to admit the truth.
+    startTime: 0.5
+  - line: "Admit it, William. Admit\u2013"
+    startTime: 0.5
+  isComplete: 1
