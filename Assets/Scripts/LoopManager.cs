@@ -54,7 +54,7 @@ public class LoopManager : MonoBehaviour
         
         if (radioTrigger != null)
         {
-            if (Random.value <= 0.15f)
+            if (Random.value <= 0.1f)
                 radioTrigger.SetActive(true);
             else
                 radioTrigger.SetActive(false);
