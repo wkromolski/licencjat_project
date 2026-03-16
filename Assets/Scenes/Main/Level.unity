@@ -1517,12 +1517,17 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 980365052}
     m_Modifications:
     - target: {fileID: 7801104602576409991, guid: 80fdf1b42e9f8d04383e11d4170d4a05,
         type: 3}
       propertyPath: m_Name
       value: Lori
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095583283265732607, guid: 80fdf1b42e9f8d04383e11d4170d4a05,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.13999999
       objectReference: {fileID: 0}
     - target: {fileID: 9095583283265732607, guid: 80fdf1b42e9f8d04383e11d4170d4a05,
         type: 3}
@@ -1575,10 +1580,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 824612789078528463, guid: 80fdf1b42e9f8d04383e11d4170d4a05, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80fdf1b42e9f8d04383e11d4170d4a05, type: 3}
+--- !u!4 &520615751 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9095583283265732607, guid: 80fdf1b42e9f8d04383e11d4170d4a05,
+    type: 3}
+  m_PrefabInstance: {fileID: 520615750}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &524218660 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 4077659233973989243, guid: a9fc1f2a21695eb4ebd99144bc01d95a,
@@ -8124,6 +8136,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4926250756826308521}
+    - targetCorrespondingSourceObject: {fileID: 7642916490859510483, guid: bbe664cd39ea9ee46ac0acfcc69934e6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 520615751}
     - targetCorrespondingSourceObject: {fileID: 359989230757606242, guid: bbe664cd39ea9ee46ac0acfcc69934e6,
         type: 3}
       insertIndex: 7
@@ -9068,25 +9084,24 @@ SceneRoots:
   - {fileID: 1013057250}
   - {fileID: 599381466}
   - {fileID: 4159053247477768098}
-  - {fileID: 5338296857935729884}
   - {fileID: 584469998492740630}
-  - {fileID: 1044115931256435470}
-  - {fileID: 4369234694862739034}
   - {fileID: 2793339968204350979}
-  - {fileID: 1260257040}
   - {fileID: 4575213707507515064}
   - {fileID: 5919322177986253757}
-  - {fileID: 933837590}
-  - {fileID: 3501513984153424446}
-  - {fileID: 5972149691714134842}
+  - {fileID: 5338296857935729884}
   - {fileID: 835862941}
-  - {fileID: 6269065238964934484}
-  - {fileID: 3489469456152993344}
-  - {fileID: 2060037674}
   - {fileID: 7947091720747009294}
+  - {fileID: 5972149691714134842}
+  - {fileID: 3489469456152993344}
+  - {fileID: 3501513984153424446}
+  - {fileID: 1044115931256435470}
+  - {fileID: 4369234694862739034}
+  - {fileID: 1260257040}
+  - {fileID: 933837590}
+  - {fileID: 6269065238964934484}
+  - {fileID: 2060037674}
   - {fileID: 2046625827}
   - {fileID: 460525584}
-  - {fileID: 520615750}
   - {fileID: 1760848878}
   - {fileID: 710996282}
   - {fileID: 840656360}
