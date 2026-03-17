@@ -14764,6 +14764,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 960a1b938b63d4a498c9438d15649692, type: 2}
+    - target: {fileID: 3725233580697288054, guid: bbe664cd39ea9ee46ac0acfcc69934e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4415256949560261019, guid: bbe664cd39ea9ee46ac0acfcc69934e6,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -14953,6 +14958,8 @@ PrefabInstance:
     - {fileID: 3823990953825866367, guid: bbe664cd39ea9ee46ac0acfcc69934e6, type: 3}
     - {fileID: 1506896240250914083, guid: bbe664cd39ea9ee46ac0acfcc69934e6, type: 3}
     - {fileID: 6348988532141284937, guid: bbe664cd39ea9ee46ac0acfcc69934e6, type: 3}
+    - {fileID: 3725233580697288054, guid: bbe664cd39ea9ee46ac0acfcc69934e6, type: 3}
+    - {fileID: 2256128625295915453, guid: bbe664cd39ea9ee46ac0acfcc69934e6, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7642916490859510483, guid: bbe664cd39ea9ee46ac0acfcc69934e6,
         type: 3}
